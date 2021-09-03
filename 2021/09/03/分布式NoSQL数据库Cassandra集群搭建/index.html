@@ -16,7 +16,7 @@
 <meta property="og:description" content="1 Cassandra介绍1.1 Cassandra介绍　　Cassandra是一套开源分布式NoSQL数据库系统。它最初由Facebook开发，用于储存收件箱等简单格式数据，集GoogleBigTable的数据模型与Amazon Dynamo的完全分布式的架构于一身Facebook于2008将 Cassandra 开源，此后，由于Cassandra良好的可扩展性，被Digg、Twitter等知名">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-03T07:26:15.000Z">
-<meta property="article:modified_time" content="2021-09-03T07:26:54.909Z">
+<meta property="article:modified_time" content="2021-09-03T07:31:41.145Z">
 <meta property="article:author" content="Alisapine">
 <meta name="twitter:card" content="summary">
   
@@ -153,6 +153,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-Cassandra介绍"><a href="#1-Cassandra介绍" class="headerlink" title="1 Cassandra介绍"></a>1 Cassandra介绍</h2><h3 id="1-1-Cassandra介绍"><a href="#1-1-Cassandra介绍" class="headerlink" title="1.1 Cassandra介绍"></a>1.1 Cassandra介绍</h3><p>　　Cassandra是一套开源分布式NoSQL数据库系统。它最初由Facebook开发，用于储存收件箱等简单格式数据，集GoogleBigTable的数据模型与Amazon Dynamo的完全分布式的架构于一身Facebook于2008将 Cassandra 开源，此后，由于Cassandra良好的可扩展性，被Digg、Twitter等知名Web 2.0网站所采纳，成为了一种流行的分布式结构化数据存储方案。<br>Cassandra是一个混合型的非关系的数据库，类似于Google的BigTable。其主要功能比Dynamo （分布式的Key-Value存储系统）更丰富，但支持度却不如文档存储MongoDB（介于关系数据库和非关系数据库之间的开源产品，是非关系数据库当中功能最丰富，最像关系数据库的。支持的数据结构非常松散，是类似json的bjson格式，因此可以存储比较复杂的数据类型）。Cassandra最初由Facebook开发，后转变成了开源项目。它是一个网络社交云计算方面理想的数据库。以Amazon专有的完全分布式的Dynamo为基础，结合了Google BigTable基于列族（Column Family）的数据模型。P2P去中心化的存储。很多方面都可以称之为Dynamo 2.0。</p>
+<span id="more"></span>
 <h3 id="1-2-Cassandra的特点"><a href="#1-2-Cassandra的特点" class="headerlink" title="1.2 Cassandra的特点"></a>1.2 Cassandra的特点</h3><p>弹性可扩展性 - Cassandra是高度可扩展的; 它允许添加更多的硬件以适应更多的客户和更多的数据根据要求。<br>数据存储灵活 - Cassandra适应所有可能的数据格式，包括：结构化，半结构化和非结构化。它可以根据您的需要动态地适应变化的数据结构。<br>便捷的数据分发 - Cassandra通过在多个数据中心之间复制数据，可以灵活地在需要时分发数据。<br>快速写入 - Cassandra被设计为在廉价的商品硬件上运行。 它执行快速写入，并可以存储数百TB的数据，而不牺牲读取效率。</p>
 <h2 id="2-准备环境"><a href="#2-准备环境" class="headerlink" title="2 准备环境"></a>2 准备环境</h2><p>　　Cassandra选择了无中心的P2P架构，网络中的所有节点都是对等的，它们构成了一个环，节点之间通过Gossip协议每秒钟和至多三个节点交换一次数据，这样每个节点都拥有其它所有节点的信息，包括位置、状态等。为了保证数据交换的准确性，所有的节点必须使用同一份集群列表，这样的节点又被称作seed节点。</p>
 <table>
