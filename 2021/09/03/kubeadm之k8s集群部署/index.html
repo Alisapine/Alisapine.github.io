@@ -16,7 +16,7 @@
 <meta property="og:description" content="前言 Kubeadm 是一个工具，它提供了 kubeadm init 以及 kubeadm join 这两个命令来快速创建 kubernetes 集群。 kubeadm 通过执行必要的操作来启动和运行一个最小可用的集群。它故意被设计为只关心启动集群，而不是之前的节点准备工作。同样的，诸如安装各种各样值得拥有的插件，例如 Kubernetes Dashboard、监控解决方案以及特定云提供商的插件，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-03T03:26:13.000Z">
-<meta property="article:modified_time" content="2021-09-03T03:27:32.346Z">
+<meta property="article:modified_time" content="2021-09-03T03:43:04.229Z">
 <meta property="article:author" content="Alisapine">
 <meta name="twitter:card" content="summary">
   
@@ -156,6 +156,7 @@
 <p>Kubeadm 是一个工具，它提供了 <code>kubeadm init</code> 以及 <code>kubeadm join</code> 这两个命令来快速创建 <a href="">kubernetes</a> 集群。</p>
 <p>kubeadm 通过执行必要的操作来启动和运行一个最小可用的集群。它故意被设计为只关心启动集群，而不是之前的节点准备工作。同样的，诸如安装各种各样值得拥有的插件，例如 Kubernetes Dashboard、监控解决方案以及特定云提供商的插件，这些都不在它负责的范围。</p>
 <p>相反，我们期望由一个基于 kubeadm 从更高层设计的更加合适的工具来做这些事情；并且，理想情况下，使用 kubeadm 作为所有部署的基础将会使得创建一个符合期望的集群变得容易。</p>
+<span id="more"></span>
 <h2 id="1-Kubeadm-原理简述"><a href="#1-Kubeadm-原理简述" class="headerlink" title="1 Kubeadm 原理简述"></a>1 Kubeadm 原理简述</h2><p>Kubeadm工具的出发点很简单，就是尽可能简单的部署一个生产可用的Kubernetes集群。实际也确实很简单，只需要两条命令：</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个 Master 节点</span></span><br><span class="line">$ kubeadm init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将一个 Node 节点加入到当前集群中</span></span><br><span class="line">$ kubeadm join &lt;Master 节点的 IP 和端口 &gt;</span><br></pre></td></tr></table></figure>
 
